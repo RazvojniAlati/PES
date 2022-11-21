@@ -1,0 +1,9 @@
+1. preuzeti formater https://www.sdcard.org/downloads/formatter_4/
+-kartica se može formatirati i bez njega, ali će se ponekad javljati problemi
+-kada raspakujete i instalirate formater, pokrenite program i odaberite karticu koju želite da formatirate
+2. preuzeti disk-imager https://sourceforge.net/projects/win32diskimager/
+3. preuzeti Raspbian https://www.raspberrypi.org/downloads/raspbian/
+-za Rpi4 važno je da bude poslednja verzija Raspbiana, jer starije neće raditi
+-raspakovati i instalirati disk-imager
+-kada se pokrene disk imager potrebno odabrati SD karticu i navesti putanju do Raspbian image (ono što ste preuzeli) i stisnuti write
+4. karticu staviti u Rpi i dovršiti instalaciju kroz korake kroz koje vas navodi sistem
