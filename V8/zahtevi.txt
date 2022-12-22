@@ -1,0 +1,15 @@
+-min jedan senzor
+-min jedan aktuaator
+-predstavu ocitavanja sa senzora na IoT platformi
+-aktuaciju sa IoT platforme
+-smisao
+
+Ideje:
+-pametna basta - kontrola vlaznosti zemljista, zalivanje ako je zemljiste suvo
+-kontrola nivoa sapuna - senzor pritiska, LCD displej
+-pametna kuca - podizanje roletni i paljenje svetla ako je u kuci tamno
+-kontorla infuzije
+-kontrola otkucaja srca
+-kafici u blizini
+-pracenje linije na putu
+-igrice
