@@ -1,0 +1,8 @@
+1. preuzeti formater https://www.sdcard.org/downloads/formatter_4/
+-kartica se može formatirati i bez njega, ali će se ponekad javljati problemi
+-kada raspakujete i instalirate formater, pokrenite program i odaberite SD karticu koju želite da formatirate (kartica mora biti ubačena u računar)
+2. preuzeti Raspbian imager za sistem na Vašem računaru https://www.raspberrypi.com/software/
+-kada instalirate imager pod "Operating System" odabrati "Raspberry Pi OS (Legacy, 32-bit)
+-za ovo je potrebna internet konekcija
+-pod "Storage" odaberite svoju SD karticu
+-ispratite sve korake i ne prekidajte instalaciju koja može da potraje 
