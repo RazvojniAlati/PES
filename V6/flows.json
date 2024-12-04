@@ -1,0 +1,376 @@
+[
+    {
+        "id": "97d27e889ad42ab0",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b9197b03d5cff466",
+        "type": "inject",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "\"test\"",
+        "payloadType": "str",
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "3e0909a2a943e183"
+            ]
+        ]
+    },
+    {
+        "id": "3e0909a2a943e183",
+        "type": "debug",
+        "z": "97d27e889ad42ab0",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d10ad2d589038394",
+        "type": "ui_slider",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "b396c43b1c99f350",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 310,
+        "y": 240,
+        "wires": [
+            [
+                "0cbb4dc382154c95"
+            ]
+        ]
+    },
+    {
+        "id": "0cbb4dc382154c95",
+        "type": "ui_chart",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "group": "b396c43b1c99f350",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 550,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2eff9e6c7f5805f",
+        "type": "ui_button",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "group": "825ce89e17135f49",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 310,
+        "y": 360,
+        "wires": [
+            [
+                "045d93b587afa722"
+            ]
+        ]
+    },
+    {
+        "id": "045d93b587afa722",
+        "type": "debug",
+        "z": "97d27e889ad42ab0",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1494bc778ed7c890",
+        "type": "ui_slider",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "205b03c32c458372",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 310,
+        "y": 460,
+        "wires": [
+            [
+                "554d0397a2fd593b"
+            ]
+        ]
+    },
+    {
+        "id": "554d0397a2fd593b",
+        "type": "debug",
+        "z": "97d27e889ad42ab0",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "0c5590b49a81060b",
+        "type": "http request",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://api.open-notify.org/astros.json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 540,
+        "wires": [
+            [
+                "da41c49be62eaf43",
+                "9693744e0c8b7b3b"
+            ]
+        ]
+    },
+    {
+        "id": "da41c49be62eaf43",
+        "type": "debug",
+        "z": "97d27e889ad42ab0",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "40246ce69ff9b61b",
+        "type": "inject",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "0c5590b49a81060b"
+            ]
+        ]
+    },
+    {
+        "id": "9693744e0c8b7b3b",
+        "type": "json",
+        "z": "97d27e889ad42ab0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 770,
+        "y": 620,
+        "wires": [
+            [
+                "2df9cd44bb50d09c"
+            ]
+        ]
+    },
+    {
+        "id": "3572de28082f382a",
+        "type": "debug",
+        "z": "97d27e889ad42ab0",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "2df9cd44bb50d09c",
+        "type": "function",
+        "z": "97d27e889ad42ab0",
+        "name": "function 1",
+        "func": "var data = msg.payload;\nif (data && data.people && Array.isArray(data.people)) {\n    msg.payload = data.people.map(person => person.name);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 620,
+        "wires": [
+            [
+                "3572de28082f382a"
+            ]
+        ]
+    },
+    {
+        "id": "b396c43b1c99f350",
+        "type": "ui_group",
+        "name": "Slider&Chart",
+        "tab": "b6e2b97939b4f8c5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "825ce89e17135f49",
+        "type": "ui_group",
+        "name": "Button&LED",
+        "tab": "b6e2b97939b4f8c5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "205b03c32c458372",
+        "type": "ui_group",
+        "name": "Slider&LED",
+        "tab": "b6e2b97939b4f8c5",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b6e2b97939b4f8c5",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
