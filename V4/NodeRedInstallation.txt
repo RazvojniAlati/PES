@@ -1,8 +1,0 @@
-sudo apt update
-sudo apt upgrade -y
-bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
-sudo systemctl enable nodered.service
-sudo reboot
-cd ~/.node-red
-npm install node-red-dashboard
-sudo reboot
