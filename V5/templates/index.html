@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Senzor - Grafikon u realnom vremenu</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Temperatura u realnom vremenu (MQTT + SQLite)</h2>
+        <canvas id="tempChart"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('tempChart').getContext('2d');
+
+
+        const tempChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Temperatura (°C)',
+                    data: [],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+
+        async function fetchData() {
+            try {
+                const response = await fetch('/data');
+                const data = await response.json();
+
+                if (data.timestamps && data.values) {
+
+                    tempChart.data.labels = data.timestamps;
+                    tempChart.data.datasets[0].data = data.values;
+                    tempChart.update();
+                }
+            } catch (error) {
+                console.error('Greška pri preuzimanju podataka:', error);
+            }
+        }
+
+        setInterval(fetchData, 2000);
+
+        fetchData();
+    </script>
+
+</body>
+
+</html>
